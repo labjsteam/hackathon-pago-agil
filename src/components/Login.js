@@ -10,8 +10,9 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
 	goToCardNew() {
-		Actions.cardnew();
+		Actions.main();
 	}
+	
 	render() {
 		return (
 			<View>

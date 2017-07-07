@@ -10,6 +10,10 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 export default class CardHome extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	goToCardNew() {
 		Actions.cardnew();
 	}
@@ -18,20 +22,26 @@ export default class CardHome extends Component {
 		Actions.domiciledService();
 	}
 	render() {
+		const cards = this.props.cards;
+		console.log(cards);
 		return (
-			<View style={styles.container}>
+			<View>
 				<View style={styles.listcard}>
 					<Text>Cuenta</Text>
-					<View style={styles.listcard}>
-						<Text>BANAMEX</Text>
-						<Button
-						  style={styles.boton}
-						  onPress={this.goToCardNew}
-						  title="+"
-						  color="#841584"
-						  accessibilityLabel="+"
-						/>
-					</View>
+					{cards.map((card, i) => {
+						return (
+							<View style={styles.listcard} key={i}>
+								<Text>{card.cardNumber}</Text>
+							</View>
+						);
+					})}
+					<Button
+						style={styles.boton}
+						onPress={this.goToCardNew}
+						title="+"
+						color="#841584"
+						accessibilityLabel="+"
+					/>
 				</View>
 				<View style={styles.listcard}>
 					<Text>Servicios</Text>
@@ -78,25 +88,17 @@ export default class CardHome extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF',
-  },
   listcard: {
-	fontSize: 20,
-	textAlign: 'left',
-	marginLeft: 10,
+		marginLeft: 10,
   },
   card: {
-	fontSize: 20,
-	textAlign: 'left',
-	margin: 25,
+		fontSize: 20,
+		textAlign: 'left',
+		margin: 25,
   },
   boton: {
-	fontSize: 5,
-	textAlign: 'left',
-	margin: 5,
+		fontSize: 5,
+		textAlign: 'left',
+		margin: 5,
   },
 });
