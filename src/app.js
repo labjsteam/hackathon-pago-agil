@@ -11,6 +11,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Splash from './components/Splash';
+import Valcodigo from './components/Valcodigo';
+import Cuentausuario from './components/Cuentausuario';
 
 export default class PagoAgil extends Component {
   render() {
@@ -20,6 +22,8 @@ export default class PagoAgil extends Component {
         <Scene key="home" component={Home} hideNavBar={true}/>
         <Scene key="login" component={Login} hideNavBar={true}/>
         <Scene key="signup" component={Signup} hideNavBar={true}/>
+        <Scene key="validarcodigo" component={Valcodigo} hideNavBar={true}/>
+        <Scene key="configusuario" component={Cuentausuario} hideNavBar={true}/>
       </Scene>
     </Router>
   }
