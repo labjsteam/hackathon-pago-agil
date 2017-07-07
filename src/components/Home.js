@@ -21,13 +21,13 @@ export default class Home extends Component {
 		return (
 			<View style={styles.container}>
 				<Button
-					onPress={this.goToLogin}
+				  onPress={this.goToLogin}
 				  title="Iniciar Sesión"
 				  color="#2196F3"
 				  accessibilityLabel="Iniciar Sesión"
 				/>
 				<Button
-					onPress={this.goToSignup}
+				  onPress={this.goToSignup}
 				  title="Regístrate"
 				  color="#841584"
 				  accessibilityLabel="Regístrate"

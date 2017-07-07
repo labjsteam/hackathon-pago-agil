@@ -16,6 +16,8 @@ import PayService from './components/PayService';
 import ServiceNew from './components/ServiceNew';
 import Signup from './components/Signup';
 import Splash from './components/Splash';
+import Valcodigo from './components/Valcodigo';
+import Cuentausuario from './components/Cuentausuario';
 
 
 export default class PagoAgil extends Component {
@@ -26,11 +28,13 @@ export default class PagoAgil extends Component {
         <Scene key="home" component={Home} hideNavBar={true}/>
         <Scene key="login" component={Login} hideNavBar={true}/>
         <Scene key="signup" component={Signup} hideNavBar={true}/>
-		<Scene key="cardnew" component={CardSettings} hideNavBar={true}/>
-		<Scene key="cardHome" component={CardHome} hideNavBar={true}/>
-		<Scene key="domiciledService" component={DomiciledService} hideNavBar={true}/>
-		<Scene key="serviceNew" component={ServiceNew} hideNavBar={true}/>
-		<Scene key="pay" component={PayService} hideNavBar={true}/>
+        <Scene key="validarcodigo" component={Valcodigo} hideNavBar={true}/>
+        <Scene key="configusuario" component={Cuentausuario} hideNavBar={true}/>
+        <Scene key="cardnew" component={CardSettings} hideNavBar={true}/>
+        <Scene key="cardHome" component={CardHome} hideNavBar={true}/>
+        <Scene key="domiciledService" component={DomiciledService} hideNavBar={true}/>
+        <Scene key="serviceNew" component={ServiceNew} hideNavBar={true}/>
+        <Scene key="pay" component={PayService} hideNavBar={true}/>
       </Scene>
     </Router>
   }
