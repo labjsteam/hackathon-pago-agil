@@ -16,7 +16,7 @@ export default class CardSettings extends Component {
 		}
 	}
 
-	addCard = () => {
+	addUserCard = () => {
 		const updateStatus = this.props.updateStatus;
 		const addCard = this.props.addCard;
 
@@ -38,6 +38,9 @@ export default class CardSettings extends Component {
 		return (
 			<View>
 				<TextInput
+					placeholder="Alias de la Cuenta"
+					onChangeText={(text) => this.updateState('AliasCard', text) } />
+				<TextInput
 					placeholder="Número de Tarjeta"
 					onChangeText={(text) => this.updateState('cardNumber', text) } />
 				<TextInput
@@ -50,7 +53,7 @@ export default class CardSettings extends Component {
 					placeholder="Fecha de vencimiento"
 					onChangeText={(text) => this.updateState('expirationDate', text) } />
 				<Button
-				  onPress={this.addCard}
+				  onPress={this.addUserCard}
 				  title="Agregar"
 				  color="#841584"
 				  accessibilityLabel="Agregar"
