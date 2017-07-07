@@ -16,11 +16,11 @@ export default class Valcodigo extends Component {
 			<View>
 				<TextInput
 					placeholder="Ingresa el código"
-					keyboardType="numeric" />
+					keyboardType="numeric"
+					maxLength={4} />
 				<Button 	
 					onPress={this.goToCuentausuario}
 					title="Validar"
-					// {text: 'OK', onPress: () => console.log('OK Pressed')};
 				/>
 			</View>
 		)

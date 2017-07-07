@@ -17,7 +17,9 @@ export default class Signup extends Component {
 			<View>
 				<TextInput
 					placeholder="Ingresa tu número"
-					keyboardType="numeric" />
+					label = {+52}
+					keyboardType="numeric"
+					maxLength={10} />
 				<Button 
 					onPress={this.goToValcodigo}
 					title="Enviar" 
