@@ -7,15 +7,18 @@ import {
 
 import CardSettings from './CardSettings';
 import CardHome from './CardHome';
+import ServiceNew from './ServiceNew';
 
 export default class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			status: 'new-user',
-			cards: []
+			status: 'add-card',
+			cards: [],
+			services: [],
 		};
 	}
+
 
 	updateStatus = (newStatus) => {
 		this.setState({
@@ -30,16 +33,27 @@ export default class Main extends Component {
 			cards: cards
 		});
 	}
+	addServices = (service) => {
+		const services = this.state.services;
+		services.push(service);
+		this.setState({
+			services: services
+		});
+	}
 
 	showView = () => {
 		const status = this.state.status;
 		const cards = this.state.cards;
+		const services = this.state.services;
 
-		if (status === 'new-user') {
+		if (status === 'add-card') {
 			return <CardSettings updateStatus={this.updateStatus} addCard={this.addCard} />
 		} else if (status === 'card-added') {
-			return <CardHome cards={cards} />
+			return <CardHome services ={services} cards={cards} updateStatus={this.updateStatus} addCard={this.addCard} />
+		} else if (status === 'add-service') {
+			return <ServiceNew updateStatus={this.updateStatus} addService={this.addServices} />
 		}
+
 	}
 
 	render() {

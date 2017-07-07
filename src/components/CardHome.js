@@ -14,15 +14,24 @@ export default class CardHome extends Component {
 		super(props);
 	}
 
-	goToCardNew() {
-		Actions.cardnew();
+	goToCardNew = () => {
+		const updateStatus = this.props.updateStatus;
+		updateStatus('add-card');
 	}
+
+	goToServiceNew = () => {
+		const updateStatus = this.props.updateStatus;
+		updateStatus('add-service');
+	}
+
 
 	goToDomiciledService() {
 		Actions.domiciledService();
 	}
 	render() {
 		const cards = this.props.cards;
+		const services = this.props.services;
+		console.log(services)
 		console.log(cards);
 		return (
 			<View>
@@ -31,7 +40,7 @@ export default class CardHome extends Component {
 					{cards.map((card, i) => {
 						return (
 							<View style={styles.listcard} key={i}>
-								<Text>{card.cardNumber}</Text>
+								<Text>{card.AliasCard}</Text>
 							</View>
 						);
 					})}
@@ -45,6 +54,13 @@ export default class CardHome extends Component {
 				</View>
 				<View style={styles.listcard}>
 					<Text>Servicios</Text>
+					{services.map((service,i) => {
+							return(
+								<View style={styles.listcard} key={i}>
+									<Text>{service.aliasService}</Text>
+								</View>
+							);
+						})}
 					<View style={styles.listcard}>
 						<TouchableHighlight onPress={this.goToDomiciledService}>
 							<Text>
@@ -71,15 +87,14 @@ export default class CardHome extends Component {
 							Gas LP
 							</Text>
 						</TouchableHighlight>
-
-						<Button
-						  style={styles.boton}
-						  onPress={this.goToCardNew}
-						  title="+"
-						  color="#841584"
-						  accessibilityLabel="+"
-						/>
 					</View>
+					<Button
+					  style={styles.boton}
+					  onPress={this.goToServiceNew}
+					  title="+"
+					  color="#841584"
+					  accessibilityLabel="+"
+					/>
 				</View>
 			</View>
 		)
