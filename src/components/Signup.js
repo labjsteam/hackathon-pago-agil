@@ -17,7 +17,6 @@ export default class Signup extends Component {
 			<View>
 				<TextInput
 					placeholder="Ingresa tu número"
-					label = {+52}
 					keyboardType="numeric"
 					maxLength={10} />
 				<Button 
