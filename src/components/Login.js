@@ -6,7 +6,13 @@ import {
 	View
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
+
 export default class Login extends Component {
+	goToCardNew() {
+		Actions.main();
+	}
+	
 	render() {
 		return (
 			<View>
@@ -16,7 +22,10 @@ export default class Login extends Component {
 				<TextInput
 					placeholder="Contraseña"
 					secureTextEntry={true} />
-				<Button title="Iniciar Sesión" />
+				<Button
+				onPress={this.goToCardNew}
+				title="Iniciar Sesión"
+				/>
 			</View>
 		)
 	}
