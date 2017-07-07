@@ -41,6 +41,15 @@ export default class Signup extends Component {
 		return (
 			<View>
 				{this.showStep()}
+				<TextInput
+					placeholder="Ingresa tu número"
+					keyboardType="numeric"
+					maxLength={10} />
+				<Button 
+					onPress={this.goToValcodigo}
+					title="Enviar" 
+				/>
+
 			</View>
 		)
 	}
