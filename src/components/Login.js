@@ -12,7 +12,7 @@ export default class Login extends Component {
 	goToCardNew() {
 		Actions.main();
 	}
-	
+
 	render() {
 		return (
 			<View>

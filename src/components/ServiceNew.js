@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
 	Button,
 	StyleSheet,
+	Text,
 	TextInput,
 	View
 } from 'react-native';
@@ -38,14 +39,21 @@ export default class ServiceNew extends Component {
 	render() {
 		return (
 			<View>
+				<Text>Alias del servicio</Text>
 				<TextInput
-				placeholder="Alias del servicio"
+				placeholder="Ej. Servicio"
+				maxLength={19}
 				onChangeText={(text) => this.updateState('aliasService', text) } />
+				<Text>Número de servicio</Text>
 				<TextInput
-				placeholder="Número de Servicio"
+				placeholder="0000000000000"
+				keyboardType="numeric"
+				maxLength={12}
 				onChangeText={(text) => this.updateState('serviceName', text) } />
+				<Text>Dirección</Text>
 				<TextInput
-				placeholder="Dirección"
+				placeholder="Ej. Av. Juarez N°23, col. Valles."
+				maxLength={80}
 				onChangeText={(text)=> this.updateStatus('direction',text) } />
 				<Button
 				  onPress={this.addUserService}
